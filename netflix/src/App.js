@@ -1,15 +1,26 @@
 import "./App.css";
 import MyNavBar from "./components/MyNavbar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import MyMovies from "./components/MyMovies";
+import Gallarie from "./components/Gallarie";
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <MyNavBar />
-      <MyMovies />
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    query: "",
+    movies: [],1
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <MyNavBar
+          value={this.state.query}
+          onChange={(e) => this.setState({ query: e.target.value })}
+        />
+        <Gallarie />
+      </div>
+    );
+  }
 }
 
 export default App;

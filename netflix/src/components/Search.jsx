@@ -1,11 +1,10 @@
 import { Component } from "react";
 
-class MyMovies extends Component {
+class Search extends Component {
   state = {
     movies: [],
   };
-
-  fetchMovies = async () => {
+  search = async () => {
     try {
       let response = await fetch(
         "http://www.omdbapi.com/?i=tt3896198&apikey=11b186c9&s=" +
@@ -14,11 +13,9 @@ class MyMovies extends Component {
       if (response.ok) {
         let data = await response.json();
         console.log("HERE IS MY DATA", data);
-
         this.setState({
           movies: data.Search,
         });
-
         // the comment has been sent succesfully!!
       } else {
         console.log("error");
@@ -28,25 +25,7 @@ class MyMovies extends Component {
       console.log("error");
     }
   };
-
-  componentDidMount = () => {
-    console.log("this is componentDidMount!");
-
-    this.fetchMovies();
-  };
-
   render() {
-    console.log(this.state.movies);
-    return (
-      <>
-        {this.state.movies.map((movie) => (
-          <div class="col-12 col-sm-6 col-md-3 col-lg-2 px-1">
-            <img src={movie.Poster} class="img-fluid w-100" />
-          </div>
-        ))}
-      </>
-    );
+    return <></>;
   }
 }
-
-export default MyMovies;

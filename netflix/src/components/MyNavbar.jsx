@@ -56,7 +56,8 @@ const MyNavBar = () => (
               <input
                 type="text"
                 className="form-control"
-                id="exampleFormControlInput1"
+                value={this.props.query}
+                onChange={(e) => this.props.onChange(e)}
                 placeholder="search for movies"
               />
             </div>
