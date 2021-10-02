@@ -52,15 +52,7 @@ const MyNavBar = () => (
       <div>
         <form className="form-inline my-2 my-lg-0">
           <div className="btn-group dropdown">
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                value={this.props.query}
-                onChange={(e) => this.props.onChange(e)}
-                placeholder="search for movies"
-              />
-            </div>
+            <div className="mb-3"></div>
 
             <a
               className="text-light nav-link dropdown-toggle"

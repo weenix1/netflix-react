@@ -8,6 +8,17 @@ class Gallarie extends React.Component {
   render() {
     return (
       <>
+        <input
+          type="text"
+          placeholder="Search here"
+          value={this.state.query}
+          onChange={(e) =>
+            this.setState({
+              query: e.target.value,
+            })
+          }
+        />
+
         <h4 class="mt-5 font-bold">Romantic Movies</h4>
 
         <div
@@ -18,7 +29,7 @@ class Gallarie extends React.Component {
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div id="romance" class="row mx-n1">
-                <MyMovies query={"batman"} />
+                <MyMovies query={"spiderman"} />
               </div>
             </div>
           </div>

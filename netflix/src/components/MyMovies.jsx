@@ -40,7 +40,7 @@ class MyMovies extends Component {
     return (
       <>
         {this.state.movies.map((movie) => (
-          <div class="col-12 col-sm-6 col-md-3 col-lg-2 px-1">
+          <div className="col-12 col-sm-6 col-md-3 col-lg-2 px-1">
             <img src={movie.Poster} class="img-fluid w-100" />
           </div>
         ))}

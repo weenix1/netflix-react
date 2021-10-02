@@ -3,20 +3,19 @@ import MyNavBar from "./components/MyNavbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Gallarie from "./components/Gallarie";
 import React from "react";
+import Search from "./components/Search";
 
 class App extends React.Component {
   state = {
     query: "",
-    movies: [],1
+    movies: [],
   };
 
   render() {
     return (
       <div className="App">
-        <MyNavBar
-          value={this.state.query}
-          onChange={(e) => this.setState({ query: e.target.value })}
-        />
+        <MyNavBar />
+
         <Gallarie />
       </div>
     );
