@@ -35,15 +35,28 @@ class MyMovies extends Component {
     this.fetchMovies();
   };
 
+  componentDidUpdate = (prevProps, prevState) => {
+    console.log("this is componentDidMount!");
+
+    //we should always have a condition to avoid infinite loop
+    if (prevProps.query !== this.props.query) {
+      this.fetchMovies();
+    }
+  };
+
   render() {
     console.log(this.state.movies);
     return (
       <>
-        {this.state.movies.map((movie) => (
-          <div className="col-12 col-sm-6 col-md-3 col-lg-2 px-1">
-            <img src={movie.Poster} class="img-fluid w-100" />
-          </div>
-        ))}
+        {this.state.movies ? (
+          this.state.movies.map((movie) => (
+            <div className="col-12 col-sm-6 col-md-3 col-lg-2 px-1">
+              <img src={movie.Poster} class="img-fluid w-100" />
+            </div>
+          ))
+        ) : (
+          <h1>LOADING...</h1>
+        )}
       </>
     );
   }

@@ -3,7 +3,7 @@ import MyMovies from "./MyMovies";
 
 class Gallarie extends React.Component {
   state = {
-    query: "",
+    query: "batman",
   };
   render() {
     return (
@@ -29,7 +29,7 @@ class Gallarie extends React.Component {
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div id="romance" class="row mx-n1">
-                <MyMovies query={"spiderman"} />
+                <MyMovies query={this.state.query} />
               </div>
             </div>
           </div>
@@ -44,7 +44,7 @@ class Gallarie extends React.Component {
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div id="romance" class="row mx-n1">
-                <MyMovies query={"batman"} />
+                <MyMovies query={this.state.query} />
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@ class Gallarie extends React.Component {
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div id="romance" class="row mx-n1">
-                <MyMovies query={"batman"} />
+                <MyMovies query={this.state.query} />
               </div>
             </div>
           </div>

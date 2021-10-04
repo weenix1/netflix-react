@@ -7,7 +7,6 @@ import Search from "./components/Search";
 
 class App extends React.Component {
   state = {
-    query: "",
     movies: [],
   };
 
