@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 
 class MyMovies extends Component {
   state = {
@@ -29,11 +30,11 @@ class MyMovies extends Component {
     }
   };
 
-  /* componentDidMount = () => {
+  componentDidMount = () => {
     console.log("this is componentDidMount!");
 
     this.fetchMovies();
-  }; */
+  };
 
   componentDidUpdate = (prevProps, prevState) => {
     console.log("this is componentDidMount!");
@@ -51,7 +52,9 @@ class MyMovies extends Component {
         {this.state.movies ? (
           this.state.movies.map((movie) => (
             <div className="col-12 col-sm-6 col-md-3 col-lg-2 px-1">
-              <img src={movie.Poster} class="img-fluid w-100" />
+              <Link to={`/moviesDetails/${movie.imdbID}`}>
+                <img src={movie.Poster} class="img-fluid w-100" />
+              </Link>
             </div>
           ))
         ) : (

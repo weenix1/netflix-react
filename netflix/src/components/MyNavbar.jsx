@@ -1,8 +1,10 @@
+import { Link, withRouter } from "react-router-dom";
+
 const MyNavBar = () => (
   <>
     <nav className="navbar navbar-expand-lg navbar-dark bg-black">
       <a className="navbar-brand" href="/" style={{ marginLeft: "2px" }}>
-        <img src="./img/Netflix_Logo_RGB.png" width="95px" />
+        <img src="\img\Netflix_Logo_RGB.png" width="95px" />
       </a>
       <button
         className="navbar-toggler"
@@ -18,9 +20,11 @@ const MyNavBar = () => (
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <a className="nav-link active" href=" hh">
-              Home <span className="sr-only"></span>
-            </a>
+            <Link to="/">
+              <a className="nav-link active">
+                Home <span className="sr-only"></span>
+              </a>
+            </Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="hvh">
@@ -85,4 +89,4 @@ const MyNavBar = () => (
   </>
 );
 
-export default MyNavBar;
+export default withRouter(MyNavBar);

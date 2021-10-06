@@ -5,6 +5,7 @@ class Gallarie extends React.Component {
   state = {
     movieTitle: "batman",
   };
+
   render() {
     return (
       <>

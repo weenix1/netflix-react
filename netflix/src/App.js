@@ -3,7 +3,9 @@ import MyNavBar from "./components/MyNavbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Gallarie from "./components/Gallarie";
 import React from "react";
-import Search from "./components/Search";
+import MovieDetails from "./components/MovieDetails";
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends React.Component {
   state = {
@@ -13,9 +15,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <MyNavBar />
-
-        <Gallarie />
+        <Router>
+          <MyNavBar />
+          <Route path="/" exact component={Gallarie} />
+          <Route
+            path="/moviesDetails/:movieId"
+            exact
+            component={MovieDetails}
+          />
+        </Router>
       </div>
     );
   }
