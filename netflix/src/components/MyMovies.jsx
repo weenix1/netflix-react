@@ -29,11 +29,11 @@ class MyMovies extends Component {
     }
   };
 
-  componentDidMount = () => {
+  /* componentDidMount = () => {
     console.log("this is componentDidMount!");
 
     this.fetchMovies();
-  };
+  }; */
 
   componentDidUpdate = (prevProps, prevState) => {
     console.log("this is componentDidMount!");
